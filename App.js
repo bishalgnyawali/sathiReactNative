@@ -2,9 +2,18 @@ import React, {Component} from 'react';
 //import Component from 'react-native';
 import Login from './Login.js';
 import userProfile from './screens/userProfile.js';
-import { createStackNavigator, 
-   createAppContainer 
- } from "react-navigation";
+import contactSuperVisor from './component/contactSuperVisor';
+import focusOfTime from './component/focusOfTime';
+import lastWorkView from './component/lastWorkView';
+import messageToTeam from './component/messageToTeam';
+import punchIn from './component/punchIn';
+import {
+   createSwitchNavigator,
+   createAppContainer,
+   createDrawerNavigator,
+   //createBottomTabNavigator,
+   createStackNavigator
+ } from 'react-navigation';
 
 
 class App extends Component{
@@ -15,8 +24,9 @@ class App extends Component{
    }
    
 }
+export default App;
 
-const AppNavigator = createStackNavigator({
+/*const AppNavigator = createStackNavigator({
    
    userProfile:{
      screen: userProfile,
@@ -25,14 +35,74 @@ const AppNavigator = createStackNavigator({
    Login:{
       screen:Login,
       },
+   contactSuperVisor:{
+         screen:contactSuperVisor,
    },
+   focusOfTime:{
+         screen:focusOfTime,
+   },
+   lastWorkView:{
+      screen:lastWorkView,
+   },
+   messageToTeam:{
+      screen:messageToTeam,
+   },
+   punchIn:{
+      screen:punchIn,
+   }
+   
+
+},
 
    {
       initialRouteName:'Login',
    }
    
- );
+ );*/
 
-const AppContainer= createAppContainer(AppNavigator);
-export default App;
+const MyDrawerNavigator = createDrawerNavigator({
+   
+   /*appStackNavigator:{
+      screen: AppNavigator,
+   },*/
+   userProfile:{
+      screen: userProfile,
+      
+      }
+    },
+  
+    /*Login:{
+       screen:Login,
+       }, */
+    contactSuperVisor:{
+          screen:contactSuperVisor,
+    },
+    focusOfTime:{
+          screen:focusOfTime,
+    },
+    lastWorkView:{
+       screen:lastWorkView,
+    },
+    messageToTeam:{
+       screen:messageToTeam,
+    },
+    punchIn:{
+       screen:punchIn,
+    }
+ 
+   }
+   
+
+);
+
+
+ const AppSwitchNavigator = createSwitchNavigator({
+   Login: { screen: Login },
+   MyDrawerNavigator: { screen: MyDrawerNavigator }
+ });
+
+//const MyApp = createAppContainer(MyDrawerNavigator);
+
+const AppContainer= createAppContainer(AppSwitchNavigator);
+
  //export default createAppContainer(AppNavigator);

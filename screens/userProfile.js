@@ -1,27 +1,36 @@
 import React, { Component } from 'react';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { 
-   View, Text, StyleSheet 
+   View, Text, StyleSheet, TouchableOpacity
 } from 'react-native';
-import { createDrawerNavigator, 
-    createAppContainer 
-  } from "react-navigation";
 
-  import Login from '../Login.js';
 
-  //import userProfile from './screens/userProfile.js';
+
+import Login from '../Login.js'; 
+
+//import userProfile from './screens/userProfile.js';
 //const MyApp = createAppContainer(MyDrawerNavigator);
+
+
 
 class userProfile extends Component {
     static navigationOptions = {
         title: 'Dashboard',
+        header:null,
         
-      };
+    };
+    
+    
+
     
     render(){
         return(
             <View style={styles.Container}>
                 <View style={styles.TopContainer}>
+                    <TouchableOpacity>                   
+                        <Icon name="menu" size={30} borderRadius={5} onPress={()=>this.props.navigation.openDrawer()}/>
+                    </TouchableOpacity>
                     <Text style={styles.TextStyle}>Your in User Profile</Text>
                 </View>
                 <View style={styles.Header}>
@@ -62,28 +71,20 @@ class userProfile extends Component {
         );
     }
 }
-const MyDrawerNavigator = createDrawerNavigator({
-   
-    
-      Login:{
-         screen:Login,
-         },
-      },
-   
-);
 
-const MyApp = createAppContainer(MyDrawerNavigator);
 export default userProfile;
 
 
 const styles=StyleSheet.create({
     Container:{
-        backgroundColor:'#336e7b',
+        backgroundColor:'white',
         flex:1,
+        borderRadius:30,
         
 
     },
     TopContainer:{
+        marginTop: 30,
         backgroundColor:'white',
         height:30,
         
@@ -145,3 +146,4 @@ const styles=StyleSheet.create({
         backgroundColor:'black'
     }
 });
+

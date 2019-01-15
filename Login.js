@@ -3,10 +3,11 @@ import {
    View, 
    Platform,
    Text, 
-   Button, 
+   //Button, 
    TextInput, 
    KeyboardAvoidingView,
    StyleSheet,
+   TouchableOpacity
    } from 'react-native';
 //import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';//import { ScrollView } from 'react-native-gesture-handler';
 
@@ -57,14 +58,16 @@ class Login extends Component {
                   //onChangeText = {this.handlePassword}
                />
                
-               <Button title="Log In"
+               <TouchableOpacity title="Log In"
                   style = {styles.submitButton}
                   onPress = {() => 
                               {
                                  //createAppContainer(AppNavigator);
                                  this.props.navigation.navigate('userProfile')
                               }
-                           }/>
+                           }>
+                  <Text>Log In</Text>
+               </TouchableOpacity>
                   
             </View>
          
@@ -91,7 +94,8 @@ const styles = StyleSheet.create({
       flex:1,
       //alignItems:'center',
       backgroundColor:'#004c8c',
-      margin:2
+      margin:0,
+      borderRadius:20,
    },
    logoContainer:{
       flex:2,
@@ -99,12 +103,13 @@ const styles = StyleSheet.create({
       alignItems: 'center',
      color:'white',
      alignSelf:'center',
-     backgroundColor:'#354766'
+     backgroundColor:'#354766',
+     borderRadius:25,
    },
 
    inputContainer:{
       flex:2,
-      margin:8,
+      margin:20,
       justifyContent:'center',
       paddingTop:16,
       backgroundColor:'white',
@@ -112,19 +117,20 @@ const styles = StyleSheet.create({
       paddingRight: 16,
       paddingBottom: 8,
       paddingLeft: 16,
-      borderRadius: 6,
+      borderRadius: 25,
       
       },
    input: {
       margin: 15,
       height: 40,
       borderColor: '#7a42f4',
-      borderWidth: 1
+      borderWidth: 1,
+      borderRadius:25
    },
    submitButton: {
       backgroundColor: '#7a42f4',
       padding: 16,
-      borderRadius:8,
+      borderRadius:25,
       height: 40,
       borderWidth:8,
       
@@ -133,8 +139,12 @@ const styles = StyleSheet.create({
    submitButtonText:{
       color: 'black',
       alignSelf:'center',
+      alignItems:'center',
+      borderRadius: 25,
+      width:260,
+      height:60,
       //backgroundColor:'white',
-      borderWidth:2
+      borderWidth:8,
       //text:'bold',
       //aspectRatio:'2'
    }
