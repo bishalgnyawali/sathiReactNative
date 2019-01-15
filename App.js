@@ -68,8 +68,8 @@ const MyDrawerNavigator = createDrawerNavigator({
    userProfile:{
       screen: userProfile,
       
-      }
-    },
+      },
+    
   
     /*Login:{
        screen:Login,
