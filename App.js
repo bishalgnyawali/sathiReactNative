@@ -7,6 +7,7 @@ import focusOfTime from './component/focusOfTime';
 import lastWorkView from './component/lastWorkView';
 import messageToTeam from './component/messageToTeam';
 import punchIn from './component/punchIn';
+
 import {
    createSwitchNavigator,
    createAppContainer,
@@ -98,8 +99,10 @@ const MyDrawerNavigator = createDrawerNavigator({
 
  const AppSwitchNavigator = createSwitchNavigator({
    Login: { screen: Login },
-   MyDrawerNavigator: { screen: MyDrawerNavigator }
- });
+   MyDrawerNavigator: { screen: MyDrawerNavigator },
+   //navigationOptions: {drawerLockedMode:'locked-closed'}
+ },
+ );
 
 //const MyApp = createAppContainer(MyDrawerNavigator);
 
