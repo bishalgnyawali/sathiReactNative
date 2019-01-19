@@ -19,7 +19,8 @@ class userProfile extends Component {
         title: 'Dashboard',
         header:null,
         
-    };
+        
+    }
     
     
 
