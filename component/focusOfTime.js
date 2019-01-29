@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { Image, View } from 'react-native'
 
 export default class focusOfTime extends Component {
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <Image source={require('../images/focus.png')} style={{width:170, height:170}}/>
       </View>
     )
   }
