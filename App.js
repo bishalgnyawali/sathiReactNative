@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 //import Component from 'react-native';
 import Login from './Login.js';
-import userProfile from './screens/userProfile.js';
+import userProfile from './component/userProfile.js';
 import contactSuperVisor from './component/contactSuperVisor';
 import focusOfTime from './component/focusOfTime';
 import lastWorkView from './component/lastWorkView';
