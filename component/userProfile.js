@@ -2,61 +2,32 @@ import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { 
-   View, Text, StyleSheet, TouchableOpacity, ScrollView
+    View, 
+    StyleSheet
 } from 'react-native';
 
-
-
-
-import Login from '../Login.js'; 
+import ScrollViewContainer from '../screenComponent/ScrollViewContainer'
+//import Login from '../Login.js'; 
+import TopBarNavigation from '../screenComponent/TopBarNavigation.js';
 //import { ScrollView } from 'react-native-gesture-handler';
-
-//import userProfile from './screens/userProfile.js';
-//const MyApp = createAppContainer(MyDrawerNavigator);
-
-
-
+import IconViewContainers from '../screenComponent/IconViewContainers.js';
 class userProfile extends Component {
     static navigationOptions = {
         title: 'Dashboard',
         header:null,
-        
-
     }
     render(){
         return(
             <View style={styles.Container}>
-                <View style={styles.TopContainer}>
-                    <TouchableOpacity>                   
-                        <Icon name="menu" size={30} borderRadius={5} onPress={()=>this.props.navigation.openDrawer()}/>
-                    </TouchableOpacity>
-                    
-                </View>
-                
-                <ScrollView style={styles.SliderContainer} horizontal={true}>
-                            <View style={styles.Icon1}>
 
-                            </View>
-                            <View style={styles.Icon2}>
-                                
-                            </View>
-                            <View style={styles.Icon3}>
-                                
-                            </View>
-                </ScrollView>
+                <TopBarNavigation navigate={this.props.navigation}/>
+
+                <ScrollViewContainer/>
+                
+                
                 <View style={styles.IconViewContainer}>
-                    <View style={{flex:1, flexDirection:'row'}}> 
-                        <View style={styles.Icon1}>
-                            <Icon name="menu" size={30} borderRadius={5} onPress={()=>this.props.navigation.openDrawer()}/>
-                        </View>
-                        <View style={styles.Icon2}>
-                            <Icon name="" size={30} borderRadius={5}/>
-                        </View>
-                        <View style={styles.Icon3}>
-                            <Icon name="" size={30} borderRadius={5}/>
-                        </View>
-                    </View>
-                    <View style={{flex:1, flexDirection:'row'}}>
+                    <IconViewContainers/>
+                    {/* <View style={{flex:1, flexDirection:'row'}}>
                         <View style={styles.Icon1}>
                             <Icon name="" size={30} borderRadius={5}/>
                         </View>
@@ -64,9 +35,10 @@ class userProfile extends Component {
                             <Icon name="" size={30} borderRadius={5}/> 
                         </View>
                         <View style={styles.Icon3}>
+                            
                             <Icon name="" size={30} borderRadius={5}/> 
                         </View>
-                    </View>
+                    </View> */}
                         
                 </View>
                 
@@ -86,18 +58,7 @@ const styles=StyleSheet.create({
         
 
     },
-    TopContainer:{
-        marginTop: 30,
-        backgroundColor:'white',
-        height:30,
-        
-
-    },
     
-    SliderContainer:{
-        //flex:7,
-        backgroundColor:'purple'
-    },
     IconViewContainer:{
         flex:1,
         backgroundColor:'red',

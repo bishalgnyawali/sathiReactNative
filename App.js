@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
 //import Component from 'react-native';
 import Login from './Login.js';
-import userProfile from './component/userProfile.js';
+
 import contactSuperVisor from './component/contactSuperVisor';
 import focusOfTime from './component/focusOfTime';
 import lastWorkView from './component/lastWorkView';
 import messageToTeam from './component/messageToTeam';
 import punchIn from './component/punchIn';
-
+import userProfile from './component/userProfile';
+   
 import {
    createSwitchNavigator,
    createAppContainer,
    createDrawerNavigator,
    //createBottomTabNavigator,
-   createStackNavigator
- } from 'react-navigation';
+   //createStackNavigator
+} from 'react-navigation';
 
 
 class App extends Component{
@@ -66,46 +67,44 @@ const MyDrawerNavigator = createDrawerNavigator({
    /*appStackNavigator:{
       screen: AppNavigator,
    },*/
+   
    userProfile:{
       screen: userProfile,
-      
-      },
-    
-  
+   }, 
+
     /*Login:{
-       screen:Login,
-       }, */
-    contactSuperVisor:{
-          screen:contactSuperVisor,
-    },
-    focusOfTime:{
-          screen:focusOfTime,
-    },
-    lastWorkView:{
-       screen:lastWorkView,
-    },
-    messageToTeam:{
-       screen:messageToTeam,
-    },
-    punchIn:{
-       screen:punchIn,
-    }
- 
+screen:Login,
+}, */
+   contactSuperVisor:{
+      screen:contactSuperVisor,
+   },
+   focusOfTime:{
+      screen:focusOfTime,
+   },
+   lastWorkView:{
+      screen:lastWorkView,
+   },
+   messageToTeam:{
+      screen:messageToTeam,
+   },
+   punchIn:{
+      screen:punchIn,
    }
+}
    
 
 );
 
 
- const AppSwitchNavigator = createSwitchNavigator({
+const AppSwitchNavigator = createSwitchNavigator({
    Login: { screen: Login },
    MyDrawerNavigator: { screen: MyDrawerNavigator },
    //navigationOptions: {drawerLockedMode:'locked-closed'}
- },
- );
+}
+);
 
 //const MyApp = createAppContainer(MyDrawerNavigator);
 
 const AppContainer= createAppContainer(AppSwitchNavigator);
 
- //export default createAppContainer(AppNavigator);
+//export default createAppContainer(AppNavigator);

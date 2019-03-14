@@ -13,32 +13,30 @@ import {
 
 class Login extends Component {
    
-  static navigationOptions = {
-      title: 'User Login',///gives title name user login if header is not null
+static navigationOptions = {
+      title: 'User Login',//gives title name user login if header is not null
       header: null,//removes header bar
-   };
-  
+};
+
    _scrollToInput (reactNode: any) {
       // Add a 'scroll' ref to your ScrollView
       this.scroll.props.scrollToFocusedInput(reactNode)
-    }
+   }
    render() {
       return (
          <KeyboardAvoidingView
          behavior= {(Platform.OS === 'ios')? "padding" : null}//behavior="padding" 
-          style={styles.container}
-          //keyboardVerticalOffset={Constants.statusBarHeight}
-          enabled
-          >
+         style={styles.container}
+         //keyboardVerticalOffset={Constants.statusBarHeight}
+         enabled
+         >
             <View style={{flex:1}}>        
                <View style = {styles.logoContainer}>
                   <Text style={{color:'red'}}>Logo Goes Here</Text>
                </View>
 
                <View style = {styles.inputContainer}>
-  
                   <TextInput style = {styles.input}
-                  
                   underlineColorAndroid = "transparent"
                   placeholder = "Employee ID"
                   placeholderTextColor = "#9a73ef"
@@ -58,7 +56,7 @@ class Login extends Component {
                   //onChangeText = {this.handlePassword}
                />
                
-               <TouchableOpacity title="Log In"
+               <TouchableOpacity
                   style = {styles.submitButton}
                   onPress = {() => 
                               {
@@ -66,7 +64,7 @@ class Login extends Component {
                                  this.props.navigation.navigate('userProfile')
                               }
                            }>
-                  <Text>Log In</Text>
+                  <Text style={{padding:10,textAlign:'center', margin:2, color:'red'}}>Log In</Text>
                </TouchableOpacity>
                   
             </View>
@@ -74,9 +72,6 @@ class Login extends Component {
             <View style={{flex:1}}>
 
             </View>    
-        
-        
-        
          </View>
       </KeyboardAvoidingView>
 
