@@ -3,6 +3,7 @@ import {
    View, 
    Platform,
    Text, 
+   Image,
    //Button, 
    TextInput, 
    KeyboardAvoidingView,
@@ -32,7 +33,7 @@ static navigationOptions = {
          >
             <View style={{flex:1}}>        
                <View style = {styles.logoContainer}>
-                  <Text style={{color:'red'}}>Logo Goes Here</Text>
+                  <Image source={require('./assets/fun-people-healthy-life-logo-260nw-560428081.jpg')} style={{height:250, width:250, paddingTop:15, resizeMode:'stretch'}}></Image>
                </View>
 
                <View style = {styles.inputContainer}>
@@ -47,7 +48,7 @@ static navigationOptions = {
 
                <TextInput style = {styles.input}
                   //onKeyboardWillShow=()=>{this.scroll.props.scrollToPosition(0,0)}
-
+                  //secureTextEntry=1
                   underlineColorAndroid = "transparent"
                   placeholder = "Password"
                   placeholderTextColor = "#9a73ef"
@@ -64,7 +65,7 @@ static navigationOptions = {
                                  this.props.navigation.navigate('userProfile')
                               }
                            }>
-                  <Text style={{padding:10,textAlign:'center', margin:2, color:'red'}}>Log In</Text>
+                  <Text style={{padding:5,textAlign:'center', bottom:15, color:'white',borderColor: 'black'}}>Log In</Text>
                </TouchableOpacity>
                   
             </View>
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
       justifyContent:'center',
       alignItems: 'center',
      color:'white',
+     marginTop:10,
      alignSelf:'center',
      backgroundColor:'#354766',
      borderRadius:25,
@@ -116,6 +118,7 @@ const styles = StyleSheet.create({
       
       },
    input: {
+      paddingLeft:18,
       margin: 15,
       height: 40,
       borderColor: '#7a42f4',
@@ -123,10 +126,14 @@ const styles = StyleSheet.create({
       borderRadius:25
    },
    submitButton: {
-      backgroundColor: '#7a42f4',
-      padding: 16,
+      backgroundColor: 'black',
+      paddingTop:12,//padding: 16,
       borderRadius:25,
       height: 40,
+      width:160,
+      marginBottom: 30,
+      marginTop: 0,
+      marginLeft:75,
       borderWidth:8,
       
       
