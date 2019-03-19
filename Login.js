@@ -33,7 +33,7 @@ static navigationOptions = {
          >
             <View style={{flex:1}}>        
                <View style = {styles.logoContainer}>
-                  <Image source={require('./assets/fun-people-healthy-life-logo-260nw-560428081.jpg')} style={{height:250, width:250, paddingTop:15, resizeMode:'stretch'}}></Image>
+                  <Image source={require('./assets/fun-people-healthy-life-logo-260nw-560428081.jpg')} style={{height:150, width:150, paddingTop:15, resizeMode:'stretch',backgroundColor:'#004c8c'}}></Image>
                </View>
 
                <View style = {styles.inputContainer}>
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
       borderRadius:20,
    },
    logoContainer:{
+      backgroundColor:'#004c8c',
       flex:2,
       justifyContent:'center',
       alignItems: 'center',
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
    inputContainer:{
       flex:2,
       margin:20,
+      paddingTop:20,
       justifyContent:'center',
       paddingTop:16,
       backgroundColor:'white',
