@@ -24,9 +24,9 @@ export default TopBarNavigation;
 
 const styles=StyleSheet.create({
     TopContainer:{
-        marginTop: 30,
-        backgroundColor:'white',
+        marginTop: 3,
         height:30,
+        backgroundColor:'#abc5'
         
 
     }

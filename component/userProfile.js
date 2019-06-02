@@ -25,9 +25,9 @@ class userProfile extends Component {
                 <ScrollViewContainer/>
                 
                 
-                <View style={styles.IconViewContainer}>
+               <View style={styles.IconViewContainer}>
                     <IconViewContainers/>
-                    {/* <View style={{flex:1, flexDirection:'row'}}>
+                    {/*<View style={{flex:1, flexDirection:'row'}}>
                         <View style={styles.Icon1}>
                             <Icon name="" size={30} borderRadius={5}/>
                         </View>
@@ -39,7 +39,6 @@ class userProfile extends Component {
                             <Icon name="" size={30} borderRadius={5}/> 
                         </View>
                     </View> */}
-                        
                 </View>
                 
             </View>
@@ -53,21 +52,22 @@ export default userProfile;
 const styles=StyleSheet.create({
     Container:{
         backgroundColor:'white',
-        flex:1,
+        flex:8,
         borderRadius:30,
         
-
+        
     },
     
     IconViewContainer:{
         flex:1,
-        backgroundColor:'red',
+        backgroundColor:'#aba9',
         flexDirection:'column',
         margin:8,
         justifyContent:'space-around'
 
-    },
-    Icon1:{
+    }
+});
+    {/*Icon1:{
         flex:1,
         margin:8,
         height:50,
@@ -98,7 +98,7 @@ const styles=StyleSheet.create({
         height:50,
         width:50,
 
-    },
+    },*/}
     
-});
+
 

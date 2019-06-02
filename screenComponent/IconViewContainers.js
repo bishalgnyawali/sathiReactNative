@@ -10,13 +10,13 @@ const IconViewContainers=()=>{
         
             <View style={{flex:1, flexDirection:'row'}}> 
                 <View style={styles.Icon1}>
-                    <Icon name="menu" size={30} borderRadius={5}/>
+                    
                 </View>
                 <View style={styles.Icon2}>
-                    <Icon name="" size={30} borderRadius={5}/>
+                    <Icon name="rocket" size={30} borderRadius={5}/>
                 </View>
                 <View style={styles.Icon3}>
-                    <Icon name="" size={30} borderRadius={5}/>
+                    <Icon name="email" size={30} borderRadius={5}/>
                 </View>
             </View>
     )

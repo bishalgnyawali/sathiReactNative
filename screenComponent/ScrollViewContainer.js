@@ -6,40 +6,49 @@ import {
 } from 'react-native';
 
 const ScrollViewContainer=()=>{
-return(
-        <ScrollView style={styles.SliderContainer} horizontal={true}
-            pagingEnabled
-            scrollEventThrottle={10}
-            showsHorizontalScrollIndicator={false}
-        >    
-                
-            <View style={{...StyleSheet.absoluteFillObject, flex:1, height:400, width:400, justifyContent:'flex-end',alignItems:'center'}}>
-                <MapView
-                        style={{...StyleSheet.absoluteFillObject}}
-                        //provider={PROVIDER_GOOGLE}
-                        //customMapStyle={MapStyle}
-                        showsMyLocationButton={true}
-                        showsUserLocation
-                        region={{
-                            latitude: 37.78825,
-                            longitude: -122.4324,
-                            latitudeDelta: 0.015,
-                            longitudeDelta: 0.0121,
-                        }}
-                        
-                />
-            </View>
-        
-        </ScrollView>
-)
+//render(){
+    return(
+            <ScrollView style={{flex:5}} horizontal={true}
+              pagingEnabled
+              scrollEventThrottle={10}
+              showsHorizontalScrollIndicator={false}
+            >    
+                    
+                <View style={styles.container}>
+                    <MapView
+                            style={{...StyleSheet.absoluteFillObject}}
+                            //provider={PROVIDER_GOOGLE}
+                            //customMapStyle={MapStyle}
+                            showsMyLocationButton={true}
+                            showsUserLocation
+                            initialRegion = {{
+                              latitude:-6.270565,
+                              longitude:106.759550,
+                              latitudeDelta: 1,
+                              longitudeDelta: 1
+                                }}/>
+                    
+                </View>
+            
+            </ScrollView>
+    )
+    //}
 }
 
 export default ScrollViewContainer;
 
-const styles=StyleSheet.create({
-    SliderContainer:{
-        
-        //flex:7,
-        backgroundColor:'purple'
-    }
-})
+const styles = StyleSheet.create({
+    container: {
+      flex:1,
+      position: 'relative',
+      
+    },
+    
+    map: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+    },
+  });
